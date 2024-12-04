@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import "./app.css";
 import { Movielist, Navbar,Loader } from "./components";
 import axios from "axios";
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
+import About from "./Pages/About";
+import Home from "./Pages/Home";
+import Movie from "./Pages/Movie";
+import Moviedetails from "./Pages/Moviedetails";
 
 const API_BASE_URL = "http://www.omdbapi.com/";
 // &apikey=11670b20
@@ -30,7 +35,15 @@ const App = () => {
         setInputValue={setInputValue}
         search={search}
       />
-      {isLoading ? <Loader /> : <Movielist movielist={movies}></Movielist>}
+      <Router>
+        <Routes>
+          <Route path="/movie-list" element={<Movie movielist={movies} />} />
+          <Route path="/about" element={<About/>}/>
+          <Route path="/" element={<Home/>}/> 
+          <Route path="/movie-list/:imdbID" element={<Moviedetails/>}/>
+        </Routes>
+      </Router>
+      {/* {isLoading ? <Loader /> : <Movie movielist={movies}></Movie>} */}
     </div>
   );
 };

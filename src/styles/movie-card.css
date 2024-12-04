@@ -1,3 +1,41 @@
-.movie-card{
-    padding:2rem;
+/* .movie-card{
+    padding-left: 2rem;
+} */
+ .movie-card {
+    width: 300px;          /* Set a fixed width for the movie card */
+    height: 400px;
+    margin: 1rem;          /* Add some space around each card */
+    padding: 1rem;         /* Add some padding inside the card */
+    background-color: #121113;
+    border-radius: 8px;    /* Rounded corners */
+}
+.movie-card img{
+    height: 80%;
+    width: 100%;
+    object-fit: contain;
+    
+}
+.movie-card h3 {
+    max-width: 80%;        /* Limit the width to 60% of the parent container */
+    text-align: center;    /* Center the text horizontally */
+    margin: 0 auto;        /* Center the h3 element itself */
+    color: #fff;           /* White text color for contrast */
+    word-wrap: break-word; /* Ensure words break and wrap onto the next line */
+    white-space: normal;   /* Allow wrapping if the text is too long */
+}
+
+.movie-card p{
+    text-align: center;
+}
+.movie-card:hover {
+    scale: 1.15;
+    transition: all  cubic-bezier(0.175, 0.885, 0.32, 1.275) 2s;
+}
+.link{
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+.link:visited{
+    color: crimson;
 }
